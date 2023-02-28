@@ -6,7 +6,7 @@ body {
  margin: 1px !important;
  background-color: #333333 !important;
 }
-.centerContent{
+.centerContent {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,7 +17,20 @@ body {
   border-radius: 20px;
   color: white;
   width: 60%;
+  transition: .8s all;
+  cursor: pointer;
 }
+.centerContent:hover{
+  box-shadow: 0px 0px 20px 0px #333333;
+
+}
+.colorPicker{
+  width: 50px !important;
+  height: 50px;
+  margin: 10px 10px;
+}
+
+
 .centerContent h1{
   font-size: 50px;
   font-family: 'Righteous', cursive;
@@ -84,6 +97,7 @@ body {
   
 }
 
+
 @keyframes move {
   0% { transform: translateX(0); }
   50% { transform: translateX(50%); }
@@ -92,6 +106,9 @@ body {
 .heartEmoji{
   color: red;
   font-size: 20px;
+}
+.manuallGen{
+  margin-top: 20px;
 }
 
 
@@ -111,5 +128,17 @@ body {
     .credits{
         right: 37% !important;
     }
+    .btn{
+      font-size: 10px !important;
+      padding: 5px 10px !important;
+    }
+    .centerContent p{
+      display: none;
+    }
+    .colorPicker{
+      height: 30px;
+      width: 20px;
+    }
+    
     
 }

@@ -18,19 +18,24 @@
 <body id="body">
     <div class="centerContent">
         <h1>Random Gradient Generator</h1>
-        <button
-          class="btn btn-danger rounded-pill px-5 mt-2"
-          onClick="genRandomHex()"
-        >
-          GENERATE
-        </button>
-
+        <p class="text-secondary mb-1">By clicking above button a random gradient will be generated for you</p>
+        <button class="btn btn-danger rounded-pill px-5 mt-2" onClick="genRandomHex()">AUTO GENERATE</button>
+        
         <div class="copy-link">
             <input type="text" class="copy-link-input" readonly />
             <button type="button" class="copy-link-button">
                 <span class="fa fa-clipboard"></span>
             </button>
         </div>
+        
+        <div class="manuallGen">
+          <p class="text-secondary mb-1">Generate gradient by giving two color values</p>
+          <input class="colorPicker" value="#18d26d" type="color" id="color1" name="color1">
+          <input class="colorPicker" value="#22a7f2" type="color" id="color2" name="color2"><br>
+          <button class="btn btn-primary rounded-pill px-5 mt-2" onClick="genCustomHex()">Manually Generate</button>
+        </div>
+
+
       </div>
       <p class='credits'>Made By <b>Yasir Nawaz</b> with <span class='fa fa-heart heartEmoji'></span></p>
 
@@ -67,8 +72,8 @@
       document.getElementById('body').style.background = gradient;
       document.getElementById('body').classList.add('bg-transition');
       document.querySelector(".copy-link-input").value = `background: ${gradient}`;
-      
     }
+    
     
   document.querySelectorAll(".copy-link").forEach((copyLinkParent) => {
       const inputField = copyLinkParent.querySelector(".copy-link-input");
@@ -89,6 +94,19 @@
         
         
     });
+
+
+    function genCustomHex() {
+    const hex1 = document.getElementById('color1').value.substring(1);
+    const hex2 = document.getElementById('color2').value.substring(1);
+  
+    const gradient = `linear-gradient(45deg, #${hex1}, #${hex2})`;
+  
+    document.getElementById('body').style.background = gradient;
+    document.getElementById('body').classList.add('bg-transition');
+    document.querySelector(".copy-link-input").value = `background: ${gradient}`;
+}
+
       </script>
 
 </body>
